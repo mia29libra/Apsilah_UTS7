@@ -16,12 +16,12 @@ export default function App() {
       {/* Menu Section */}
       <View style={styles.menuSection}>
         <TouchableOpacity style={styles.card}>
-          <Icon name="calendar-clock" size={50} color="#FFA000" />
+          <Icon name="calendar-month-outline" size={50} color="#4CAF50" /> {/* Ikon untuk "Jadwal" */}
           <Text style={styles.cardText}>Jadwal</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.card}>
-          <Icon name="calendar-check" size={50} color="#FFA000" />
+          <Icon name="clipboard-list-outline" size={50} color="#2196F3" /> {/* Ikon untuk "Absen Pelajaran" */}
           <Text style={styles.cardText}>Absen Pelajaran</Text>
         </TouchableOpacity>
       </View>
@@ -29,18 +29,21 @@ export default function App() {
       {/* Links */}
       <View style={styles.links}>
         <TouchableOpacity style={styles.linkButton}>
-          <Icon name="account-tie" size={25} color="#000" style={styles.linkIcon} />
+          <Icon name="account-tie" size={25} color="#0057A0" style={styles.linkIcon} />
           <Text style={styles.linkText}>Guru Pengajar</Text>
+          <Icon name="chevron-right" size={25} color="#0057A0" style={styles.linkArrow} />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.linkButton}>
-          <Icon name="cog" size={25} color="#000" style={styles.linkIcon} />
+          <Icon name="cog" size={25} color="#0057A0" style={styles.linkIcon} />
           <Text style={styles.linkText}>Pengaturan Profil</Text>
+          <Icon name="chevron-right" size={25} color="#0057A0" style={styles.linkArrow} />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.linkButton}>
-          <Icon name="database" size={25} color="#000" style={styles.linkIcon} />
+          <Icon name="database" size={25} color="#0057A0" style={styles.linkIcon} />
           <Text style={styles.linkText}>Data Siswa</Text>
+          <Icon name="chevron-right" size={25} color="#0057A0" style={styles.linkArrow} />
         </TouchableOpacity>
       </View>
 
@@ -52,11 +55,11 @@ export default function App() {
       {/* Footer Navigation */}
       <View style={styles.footer}>
         <TouchableOpacity style={styles.footerItem}>
-          <Icon name="home" size={25} color="#000" />
+          <Icon name="home" size={25} color="#0057A0" />
           <Text style={styles.footerText}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.footerItem}>
-          <Icon name="account" size={25} color="#000" />
+          <Icon name="account" size={25} color="#0057A0" />
           <Text style={styles.footerText}>Account</Text>
         </TouchableOpacity>
       </View>
@@ -109,6 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     padding: 15,
     borderRadius: 10,
     marginVertical: 5,
@@ -120,6 +124,10 @@ const styles = StyleSheet.create({
   linkText: {
     fontSize: 16,
     color: "#000",
+    flex: 1,
+  },
+  linkArrow: {
+    marginLeft: 10,
   },
   logoutButton: {
     backgroundColor: "#d3e3fc",
@@ -127,10 +135,11 @@ const styles = StyleSheet.create({
     padding: 15,
     alignItems: "center",
     borderRadius: 10,
+    elevation: 3,
   },
   logoutText: {
     fontSize: 16,
-    color: "#0057A0",
+    color: "#0057A0", // Warna teks "KELUAR" biru
     fontWeight: "bold",
   },
   footer: {
