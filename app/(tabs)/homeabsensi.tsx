@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
+import { router } from 'expo-router';
 
 export default function HomeScreen() {
   return (
@@ -15,9 +16,10 @@ export default function HomeScreen() {
       </View>
 
       {/* Date Section */}
-      <View style={styles.dateContainer}>
+      <TouchableOpacity style={styles.dateContainer}>
         <Text style={styles.dateText}>09 November 2024</Text>
-      </View>
+        <Entypo name="chevron-right" size={20} color="white" style={styles.dateIcon} />
+      </TouchableOpacity>
 
       {/* Icon Grid */}
       <View style={styles.iconGrid}>
@@ -32,7 +34,11 @@ export default function HomeScreen() {
       {/* Attendance Section */}
       <Text style={styles.attendanceText}>Absen Bulan November 2024</Text>
       <View style={styles.attendanceContainer}>
-        <TouchableOpacity style={styles.attendanceButton}>
+        <TouchableOpacity 
+        onPress={() => {
+          router.push('/absenmasuk')
+        }}
+        style={styles.attendanceButton}>
           <Text style={styles.attendanceButtonText}>Absen Masuk</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.attendanceButton}>
@@ -41,23 +47,18 @@ export default function HomeScreen() {
       </View>
 
       {/* Footer Navigation */}
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerButton}>
-          <Entypo name="home" size={24} color="blue" />
-          <Text style={styles.footerText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerButton}>
-          <Entypo name="user" size={24} color="blue" />
-          <Text style={styles.footerText}>Account</Text>
-        </TouchableOpacity>
-      </View>
+      
     </View>
   );
 }
 
 function IconButton({ icon, label }) {
   return (
-    <TouchableOpacity style={styles.iconButton}>
+    <TouchableOpacity 
+    onPress={() => {
+      router.push('/riwayat')
+    }}
+    style={styles.iconButton}>
       <FontAwesome name={icon} size={24} color="black" />
       <Text style={styles.iconLabel}>{label}</Text>
     </TouchableOpacity>
@@ -96,16 +97,22 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   dateContainer: {
+    flexDirection: 'row',
     backgroundColor: '#FFC107',
     borderRadius: 10,
     paddingVertical: 10,
+    paddingHorizontal: 15,
     alignItems: 'center',
+    justifyContent: 'space-between',
     marginVertical: 15,
   },
   dateText: {
     fontSize: 16,
     color: 'white',
     fontWeight: 'bold',
+  },
+  dateIcon: {
+    marginLeft: 10,
   },
   iconGrid: {
     flexDirection: 'row',

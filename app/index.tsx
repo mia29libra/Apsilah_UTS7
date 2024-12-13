@@ -1,46 +1,35 @@
+import { router } from 'expo-router';
 import React from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
-export default function App() {
+export default function WelcomeScreen() {
   return (
     <View style={styles.container}>
-      {/* Header */}
-      <Text style={styles.header}>Absensi Online</Text>
+      {/* Title (Absensi Online) */}
+      <Text style={styles.title}>Absensi Online</Text>
 
-      {/* Login Form */}
-      <View style={styles.formContainer}>
-        <Text style={styles.loginText}>Login</Text>
-
-        {/* Email Input */}
-        <View style={styles.inputContainer}>
-          <Text style={styles.inputLabel}>Email</Text>
-          <TextInput
-            placeholder="Email ..."
-            placeholderTextColor="#c4c4c4"
-            style={styles.input}
-            keyboardType="email-address"
-          />
-        </View>
-
-        {/* Password Input */}
-        <View style={styles.inputContainer}>
-          <Text style={styles.inputLabel}>Password</Text>
-          <TextInput
-            placeholder="Password ..."
-            placeholderTextColor="#c4c4c4"
-            secureTextEntry={true}
-            style={styles.input}
-          />
-        </View>
-
-        {/* Login Button */}
-        <TouchableOpacity style={styles.loginButton}>
-          <Text style={styles.loginButtonText}>Login</Text>
-        </TouchableOpacity>
+      {/* Icon for Absensi (not circle) */}
+      <View style={styles.iconContainer}>
+        <FontAwesome name="book" size={100} color="#1976D2" />
       </View>
 
-      {/* Footer */}
-      <Text style={styles.footer}>Absensi Online Berbasis GPS</Text>
+      {/* Login Button with icon */}
+      <TouchableOpacity 
+        onPress={() => {
+          router.push('/login');
+        }}
+        style={styles.loginButton}
+      >
+        <MaterialIcons name="login" size={30} color="white" />
+        <Text style={styles.loginText}>Login</Text>
+      </TouchableOpacity>
+
+      {/* Signup Button with icon */}
+      <TouchableOpacity style={styles.signupButton}>
+        <MaterialIcons name="person-add" size={30} color="white" />
+        <Text style={styles.signupText}>Signup</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -48,65 +37,56 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#00509D',
-    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
     justifyContent: 'center',
-    padding: 20,
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 20,
-  },
-  formContainer: {
-    width: '100%',
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    padding: 20,
     alignItems: 'center',
+    padding: 20,
   },
-  loginText: {
-    fontSize: 20,
+  title: {
+    fontSize: 24,
+    color: '#FFC107',
     fontWeight: 'bold',
-    color: '#000',
     marginBottom: 20,
+    position: 'absolute',
+    top: 50, // Menempatkan teks di atas
   },
-  inputContainer: {
-    width: '100%',
-    marginBottom: 15,
-  },
-  inputLabel: {
-    fontSize: 14,
-    color: '#000',
-    marginBottom: 5,
-  },
-  input: {
-    width: '100%',
-    height: 40,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    fontSize: 14,
-    color: '#000',
+  iconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+   marginTop:100,
   },
   loginButton: {
-    width: '100%',
-    backgroundColor: '#FDC500',
-    padding: 10,
-    borderRadius: 5,
+    width: '80%',
+    flexDirection: 'row',
+    backgroundColor: '#1976D2',
+    paddingVertical: 20,
+    paddingHorizontal: 30,
+    borderRadius: 10,
     alignItems: 'center',
-    marginTop: 10,
+    justifyContent: 'center',
+    marginBottom: 15,
+    marginTop:150,
   },
-  loginButtonText: {
+  loginText: {
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#fff',
+    marginLeft: 10,
   },
-  footer: {
-    fontSize: 12,
-    color: '#fff',
-    marginTop: 20,
+  signupButton: {
+    width: '80%',
+    flexDirection: 'row',
+    backgroundColor: '#FFC107',
+    paddingVertical: 20,
+    paddingHorizontal: 30,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  signupText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginLeft: 10,
   },
 });

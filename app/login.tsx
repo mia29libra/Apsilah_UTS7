@@ -1,26 +1,51 @@
+import { router } from 'expo-router';
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-export default function WelcomeScreen() {
+export default function App() {
   return (
     <View style={styles.container}>
-      {/* Title */}
-      <Text style={styles.title}>Absensi Online</Text>
+      {/* Header */}
+      <Text style={styles.header}>Absensi Online</Text>
 
-      {/* Placeholder Circle (representing the image area) */}
-      <View style={styles.circle}>
-        <Text style={styles.circleText}>📚</Text>
+      {/* Login Form */}
+      <View style={styles.formContainer}>
+        <Text style={styles.loginText}>Login</Text>
+
+        {/* Email Input */}
+        <View style={styles.inputContainer}>
+          <Text style={styles.inputLabel}>Email</Text>
+          <TextInput
+            placeholder="Email ..."
+            placeholderTextColor="#c4c4c4"
+            style={styles.input}
+            keyboardType="email-address"
+          />
+        </View>
+
+        {/* Password Input */}
+        <View style={styles.inputContainer}>
+          <Text style={styles.inputLabel}>Password</Text>
+          <TextInput
+            placeholder="Password ..."
+            placeholderTextColor="#c4c4c4"
+            secureTextEntry={true}
+            style={styles.input}
+          />
+        </View>
+
+        {/* Login Button */}
+        <TouchableOpacity  
+        onPress={() => {
+          router.replace('/(tabs)/homeabsensi')
+        }}
+        style={styles.loginButton}>
+          <Text style={styles.loginButtonText}>Login</Text>
+        </TouchableOpacity>
       </View>
 
-      {/* Login Button */}
-      <TouchableOpacity style={styles.loginButton}>
-        <Text style={styles.loginText}>Login</Text>
-      </TouchableOpacity>
-
-      {/* Signup Button */}
-      <TouchableOpacity style={styles.signupButton}>
-        <Text style={styles.signupText}>Signup</Text>
-      </TouchableOpacity>
+      {/* Footer */}
+      <Text style={styles.footer}>Absensi Online Berbasis GPS</Text>
     </View>
   );
 }
@@ -28,52 +53,65 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
-    justifyContent: 'center',
+    backgroundColor: '#00509D',
     alignItems: 'center',
+    justifyContent: 'center',
     padding: 20,
   },
-  title: {
+  header: {
     fontSize: 24,
-    color: '#FFC107',
     fontWeight: 'bold',
+    color: '#fff',
     marginBottom: 20,
   },
-  circle: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
-    backgroundColor: '#E1E7FF',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 30,
-  },
-  circleText: {
-    fontSize: 48,
-  },
-  loginButton: {
-    width: '80%',
-    backgroundColor: '#1976D2',
-    padding: 15,
+  formContainer: {
+    width: '100%',
+    backgroundColor: '#fff',
     borderRadius: 10,
+    padding: 20,
     alignItems: 'center',
-    marginBottom: 15,
   },
   loginText: {
-    color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 20,
   },
-  signupButton: {
-    width: '80%',
-    backgroundColor: '#FFC107',
-    padding: 15,
-    borderRadius: 10,
+  inputContainer: {
+    width: '100%',
+    marginBottom: 15,
+  },
+  inputLabel: {
+    fontSize: 14,
+    color: '#000',
+    marginBottom: 5,
+  },
+  input: {
+    width: '100%',
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    fontSize: 14,
+    color: '#000',
+  },
+  loginButton: {
+    width: '100%',
+    backgroundColor: '#FDC500',
+    padding: 10,
+    borderRadius: 5,
     alignItems: 'center',
+    marginTop: 10,
   },
-  signupText: {
-    color: '#FFFFFF',
+  loginButtonText: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#fff',
+  },
+  footer: {
+    fontSize: 12,
+    color: '#fff',
+    marginTop: 20,
   },
 });

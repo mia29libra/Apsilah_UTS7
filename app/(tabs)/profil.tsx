@@ -53,16 +53,7 @@ export default function App() {
       </TouchableOpacity>
 
       {/* Footer Navigation */}
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerItem}>
-          <Icon name="home" size={25} color="#0057A0" />
-          <Text style={styles.footerText}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem}>
-          <Icon name="account" size={25} color="#0057A0" />
-          <Text style={styles.footerText}>Account</Text>
-        </TouchableOpacity>
-      </View>
+      
     </View>
   );
 }
