@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { Entypo } from '@expo/vector-icons'; // Menggunakan Entypo untuk tombol kembali
+import { router } from 'expo-router'; // Pastikan Expo Router diaktifkan
 
 const students = [
   { id: '1', name: 'John Doe', class: 'XII IPA 1' },
@@ -39,6 +41,14 @@ export default function AttendanceTable() {
 
   return (
     <View style={styles.container}>
+      {/* Tombol Kembali dengan Ikon "<" seperti di HP */}
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => router.push('/(tabs)/homeabsensi')} // Navigate to Home screen
+      >
+        <Entypo name="chevron-left" size={30} color="white" />
+      </TouchableOpacity>
+
       {/* Header */}
       <Text style={styles.title}>Daftar Absensi</Text>
 
@@ -113,5 +123,17 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 14,
     fontWeight: 'bold',
+  },
+  backButton: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    padding: 10,
+    backgroundColor: '#6AB1D7',
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 3,
+    zIndex: 10, // Memastikan tombol tetap di atas konten lainnya
   },
 });

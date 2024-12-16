@@ -6,7 +6,7 @@ import { router } from 'expo-router';
 const data = [
   { id: '1', date: '08 November 2024', status: 'Hadir' },
   { id: '2', date: '07 November 2024', status: 'Izin' },
-  { id: '3', date: '06 November 2024', status: 'Cuti' },
+  { id: '3', date: '06 November 2024', status: 'Alpha' },
   { id: '4', date: '05 November 2024', status: 'Hadir' },
   { id: '5', date: '04 November 2024', status: 'Hadir' },
 ];

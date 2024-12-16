@@ -35,11 +35,12 @@ export default function App() {
         </View>
 
         {/* Login Button */}
-        <TouchableOpacity  
-        onPress={() => {
-          router.replace('/(tabs)/homeabsensi')
-        }}
-        style={styles.loginButton}>
+        <TouchableOpacity
+          onPress={() => {
+            router.replace('/(tabs)/homeabsensi');
+          }}
+          style={styles.loginButton}
+        >
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
       </View>
@@ -53,65 +54,76 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#00509D',
+    backgroundColor: '#fff',  // White background for the whole container
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
   },
   header: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 20,
+    color: '#00509D',  // Blue color for the header
+    marginBottom: 30,
+    textAlign: 'center',
   },
   formContainer: {
     width: '100%',
-    backgroundColor: '#fff',
+    backgroundColor: '#fff',  // White background for the form container
     borderRadius: 10,
-    padding: 20,
+    padding: 25,
     alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 6,
+    borderWidth: 1,
+    borderColor: '#00509D',  // Blue border for the form container
   },
   loginText: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
-    color: '#000',
-    marginBottom: 20,
+    color: '#00509D',  // Blue text for login title
+    marginBottom: 25,
   },
   inputContainer: {
     width: '100%',
-    marginBottom: 15,
+    marginBottom: 20,
   },
   inputLabel: {
     fontSize: 14,
-    color: '#000',
-    marginBottom: 5,
+    color: '#00509D',  // Blue color for input labels
+    marginBottom: 8,
+    fontWeight: '500',
   },
   input: {
     width: '100%',
-    height: 40,
+    height: 45,
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    fontSize: 14,
-    color: '#000',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    fontSize: 16,
+    color: '#333',
+    backgroundColor: '#fff',  // White background for inputs
   },
   loginButton: {
     width: '100%',
-    backgroundColor: '#FDC500',
-    padding: 10,
-    borderRadius: 5,
+    backgroundColor: '#87CEEB',  // Light blue color for the login button
+    paddingVertical: 12,
+    borderRadius: 8,
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 20,
   },
   loginButtonText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#fff',  // White text on the blue button
   },
   footer: {
     fontSize: 12,
-    color: '#fff',
-    marginTop: 20,
+    color: '#00509D',  // Blue footer text
+    marginTop: 30,
+    textAlign: 'center',
   },
 });

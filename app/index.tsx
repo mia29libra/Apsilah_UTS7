@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    color: '#FFC107',
+    color: '#87CEEB', // Light blue color
     fontWeight: 'bold',
     marginBottom: 20,
     position: 'absolute',
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-   marginTop:100,
+    marginTop: 100,
   },
   loginButton: {
     width: '80%',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 15,
-    marginTop:150,
+    marginTop: 150,
   },
   loginText: {
     color: '#FFFFFF',

@@ -10,58 +10,87 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <View style={styles.headerContent}>
           <Text style={styles.greeting}>Selamat Pagi</Text>
-          <Text style={styles.userName}>Miaaa</Text>
+          <Text style={styles.userName}>Ismiatul Karomah</Text>
         </View>
         <FontAwesome name="user-circle" size={40} color="white" style={styles.profileIcon} />
       </View>
 
-      {/* Date Section */}
-      <TouchableOpacity style={styles.dateContainer}>
-        <Text style={styles.dateText}>09 November 2024</Text>
+      {/* Date Section with TouchableOpacity */}
+      <TouchableOpacity 
+        style={styles.dateContainer}
+        onPress={() => router.push('/tanggal')}  // Navigasi ke halaman datepicker
+      >
+        <Text style={styles.dateText}>14/Desember/2024</Text>
         <Entypo name="chevron-right" size={20} color="white" style={styles.dateIcon} />
       </TouchableOpacity>
 
-      {/* Icon Grid */}
+      {/* Icon Grid (Navigation) */}
       <View style={styles.iconGrid}>
-        <IconButton icon="camera" label="Camera" />
-        <IconButton icon="user" label="Profile" />
-        <IconButton icon="calendar" label="Cuti" />
-        <IconButton icon="book" label="Riwayat" />
-        <IconButton icon="check" label="Hadir" />
-        <IconButton icon="pencil" label="Izin" />
+        <TouchableOpacity 
+          onPress={() => router.push('/camera')} 
+          style={styles.iconButton}
+        >
+          <FontAwesome name="camera" size={24} color="black" />
+          <Text style={styles.iconLabel}>Camera</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={() => router.push('/profile')} 
+          style={styles.iconButton}
+        >
+          <FontAwesome name="user" size={24} color="black" />
+          <Text style={styles.iconLabel}>Profile</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={() => router.push('/cuti')} 
+          style={styles.iconButton}
+        >
+          <FontAwesome name="calendar" size={24} color="black" />
+          <Text style={styles.iconLabel}>Cuti</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={() => router.push('/riwayat')} 
+          style={styles.iconButton}
+        >
+          <FontAwesome name="book" size={24} color="black" />
+          <Text style={styles.iconLabel}>Riwayat</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={() => router.push('/pengumuman')} 
+          style={styles.iconButton}
+        >
+          <FontAwesome name="bell" size={24} color="black" />
+          <Text style={styles.iconLabel}>Pengumuman</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={() => router.push('/izin')} 
+          style={styles.iconButton}
+        >
+          <FontAwesome name="pencil" size={24} color="black" />
+          <Text style={styles.iconLabel}>Izin</Text>
+        </TouchableOpacity>
       </View>
 
-      {/* Attendance Section */}
-      <Text style={styles.attendanceText}>Absen Bulan November 2024</Text>
+      {/* Attendance Section - Absen Masuk and Absen Pulang Buttons */}
       <View style={styles.attendanceContainer}>
         <TouchableOpacity 
-        onPress={() => {
-          router.push('/absenmasuk')
-        }}
-        style={styles.attendanceButton}>
+          onPress={() => router.push('/absenmasuk')} 
+          style={styles.attendanceButton}
+        >
           <Text style={styles.attendanceButtonText}>Absen Masuk</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.attendanceButton}>
+        <TouchableOpacity 
+          onPress={() => router.push('/absenpulang')} 
+          style={styles.attendanceButton}
+        >
           <Text style={styles.attendanceButtonText}>Absen Pulang</Text>
         </TouchableOpacity>
       </View>
-
-      {/* Footer Navigation */}
-      
     </View>
-  );
-}
-
-function IconButton({ icon, label }) {
-  return (
-    <TouchableOpacity 
-    onPress={() => {
-      router.push('/riwayat')
-    }}
-    style={styles.iconButton}>
-      <FontAwesome name={icon} size={24} color="black" />
-      <Text style={styles.iconLabel}>{label}</Text>
-    </TouchableOpacity>
   );
 }
 
@@ -75,7 +104,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#6AB1D7',
+    backgroundColor: '#00509D',  // Darker blue for header
     padding: 20,
     borderRadius: 15,
     justifyContent: 'space-between',
@@ -98,7 +127,7 @@ const styles = StyleSheet.create({
   },
   dateContainer: {
     flexDirection: 'row',
-    backgroundColor: '#FFC107',
+    backgroundColor: '#6AB1D7',  // Light blue for date section
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 15,
@@ -121,7 +150,7 @@ const styles = StyleSheet.create({
   },
   iconButton: {
     width: '30%',
-    backgroundColor: '#FFD54F',
+    backgroundColor: '#FFD54F',  // Soft yellow for icon buttons
     alignItems: 'center',
     padding: 10,
     borderRadius: 10,
@@ -133,42 +162,18 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: 'bold',
   },
-  attendanceText: {
-    marginTop: 20,
-    fontSize: 14,
-    color: 'black',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
   attendanceContainer: {
-    marginTop: 10,
+    marginTop: 20, // Give space between icons and attendance buttons
   },
   attendanceButton: {
-    backgroundColor: '#1976D2',
+    backgroundColor: '#1976D2',  // Consistent blue for attendance buttons
     borderRadius: 10,
     padding: 10,
-    marginVertical: 5,
+    marginVertical: 10, // Add vertical margin between the buttons
   },
   attendanceButtonText: {
     color: 'white',
     textAlign: 'center',
     fontWeight: 'bold',
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingVertical: 10,
-    backgroundColor: '#FFD54F',
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-  },
-  footerButton: {
-    alignItems: 'center',
-  },
-  footerText: {
-    color: 'blue',
-    fontSize: 12,
-    marginTop: 5,
   },
 });
