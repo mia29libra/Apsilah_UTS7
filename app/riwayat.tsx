@@ -4,11 +4,16 @@ import { Entypo } from '@expo/vector-icons';
 import { router } from 'expo-router';
 
 const data = [
-  { id: '1', date: '08 November 2024', status: 'Hadir' },
-  { id: '2', date: '07 November 2024', status: 'Izin' },
-  { id: '3', date: '06 November 2024', status: 'Alpha' },
-  { id: '4', date: '05 November 2024', status: 'Hadir' },
-  { id: '5', date: '04 November 2024', status: 'Hadir' },
+  { id: '1', date: '10 Desember 2024', status: 'Hadir' },
+  { id: '2', date: '09 Desember 2024', status: 'Izin' },
+  { id: '3', date: '08 Desember 2024', status: 'Alpha' },
+  { id: '4', date: '07 Desember 2024', status: 'Hadir' },
+  { id: '5', date: '06 Desember 2024', status: 'Hadir' },
+  { id: '6', date: '05 Desember 2024', status: 'Hadir' },
+  { id: '7', date: '04 Desember 2024', status: 'Hadir' },
+  { id: '8', date: '03 Desember 2024', status: 'Hadir' },
+  { id: '9', date: '02 Desember 2024', status: 'Hadir' },
+  { id: '10', date: '01 Desember 2024', status: 'Hadir' },
 ];
 
 export default function RiwayatScreen() {

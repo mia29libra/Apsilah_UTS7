@@ -4,11 +4,16 @@ import { Entypo } from '@expo/vector-icons'; // Menggunakan Entypo untuk tombol 
 import { router } from 'expo-router'; // Pastikan Expo Router diaktifkan
 
 const students = [
-  { id: '1', name: 'John Doe', class: 'XII IPA 1' },
-  { id: '2', name: 'Jane Smith', class: 'XII IPA 2' },
-  { id: '3', name: 'Alice Johnson', class: 'XII IPS 1' },
-  { id: '4', name: 'Bob Brown', class: 'XII IPA 3' },
-  { id: '5', name: 'Charlie Green', class: 'XII IPS 2' },
+  { id: '1', name: 'Ismiatul Karomah', class: '11 TI B' },
+  { id: '2', name: 'Ulfatus Sarifah', class: '11 TI B' },
+  { id: '3', name: 'Riska Amelia Putri', class: '11 TI B' },
+  { id: '4', name: 'Wiam', class: '11 TI B' },
+  { id: '6', name: 'Habibur Rohman', class: '11 TI B' },
+  { id: '7', name: 'Rohman', class: '11 TI B' },
+  { id: '8', name: 'Taufik Hidayat', class: '11 TI B' },
+  { id: '9', name: 'Trie Yuniarsih', class: '11 TI B' },
+  { id: '10', name: 'Putri Dwi Kharisma', class: '11 TI B' },
+  { id: '11', name: 'Putri', class: '11 TI B' },
 ];
 
 export default function AttendanceTable() {
